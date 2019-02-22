@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PicDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--이미지가 절반 먹어 시원하게 보여줘-->
+    <ImageView
+        android:id="@+id/iv_pic_detail"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:src="@drawable/f04_cafe_cake"
+        android:scaleType="centerCrop"/>
+
+        <!--이미지 슬라이더 라이브러리 추가-->
+
+
+
+
+        <!--btn : 좋아요, 공유, 수정, 지우기 버튼 추가-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="246dp">
+
+            <!--selector 사용 이미지 버튼-->
+            <ImageView
+                android:id="@+id/btn_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_like"
+                android:layout_below="@+id/iv_pic_detail"
+                android:layout_marginRight="8dp"
+                android:clickable="true"
+                android:onClick="clickLike"/>
+
+            <ImageView
+                android:id="@+id/btn_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_share"
+                android:layout_below="@+id/iv_pic_detail"
+                android:layout_marginRight="8dp"
+                android:clickable="true"
+                android:onClick="clickShare"/>
+
+            <ImageView
+                android:id="@+id/btn_modify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_modify"
+                android:layout_below="@+id/iv_pic_detail"
+                android:layout_marginRight="8dp"
+                android:clickable="true"
+                android:onClick="clickModify"/>
+
+            <ImageView
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_delete"
+                android:layout_below="@+id/iv_pic_detail"
+                android:layout_marginRight="8dp"
+                android:clickable="true"
+                android:onClick="clickDelete"/>
+
+        </LinearLayout>
+
+        <!--text-->
+       <RelativeLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="16dp"
+           android:layout_marginRight="16dp"
+           android:layout_marginTop="8dp"
+           android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tv_res_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="식당이름"
+                android:maxLines="2"
+                android:layout_marginLeft="14dp"
+                android:textColor="@color/colorNavIcon"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019-02-21"
+                android:textSize="10sp"
+                android:layout_alignParentRight="true"/>
+
+       </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/tv_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="텍스트 제목"
+                android:layout_below="@+id/tv_res_name"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:textColor="@color/fontDarkBlack"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="2dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="텍스트 내용텍스트 내용텍스트 내용텍스트 내용텍스트 내용텍스트 내용텍스트 내용텍스트 내용텍스트 내용텍스트 내용텍스트 내용텍스트 내용텍스트 내용"
+                android:layout_below="@+id/tv_main"
+                android:textColor="@color/fontDarkBlack"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="16dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_hash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="해쉬태그 #맛있어 #디저트"
+                android:layout_below="@+id/tv_content"
+                android:singleLine="true"
+                android:textColor="@color/colorNavIcon"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="24dp"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

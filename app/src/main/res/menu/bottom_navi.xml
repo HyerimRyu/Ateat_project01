@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/bottom_navi_home"
+        app:showAsAction="always"
+        android:title="@string/home"/>
+
+    <item
+        android:id="@+id/action_view_all_photos"
+        android:icon="@drawable/bottom_navi_all_phtos"
+        app:showAsAction="always"
+        android:title="@string/view_all"/>
+
+    <item
+        android:id="@+id/action_like"
+        android:icon="@drawable/bottom_navi_like"
+        app:showAsAction="always"
+        android:title="@string/like"/>
+
+    <item
+        android:id="@+id/action_camera"
+        android:icon="@drawable/bottom_navi_camera"
+        app:showAsAction="always"
+        android:title="@string/camera"/>
+
+    <item
+        android:id="@+id/action_account"
+        android:icon="@drawable/bottom_navi_account"
+        app:showAsAction="always"
+        android:title="@string/account"/>
+
+</menu>
