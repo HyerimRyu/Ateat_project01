@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true); //뒤로가기 버튼, 디폴트로 true하면 백버튼 생겨
+        //sss
 
         //탭버튼 객체 추가하기
         tabLayout=findViewById(R.id.layout_tab);
