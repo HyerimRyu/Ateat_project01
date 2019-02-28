@@ -7,38 +7,57 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
-public class RecvItems extends AppCompatActivity {
+public class RecvItems {
 
-    //AteFragment에 붙이는 파일
+    //item_detail_frag_ate.xml 상세샷에 포함된 멤버변수
+    private String resName;
+    private String msg;
+    private String hash;
 
-    RecyclerView recyclerView;
-    SwipeRefreshLayout swipeRefreshLayout;
+    private String foodPic_Url;
 
-//    int iv_food_pic;
-//    String tv_res_name;
-//    String tv_main;
-//    String tv_hash;
+    //생성자 alt + insert
+    public RecvItems(String resName, String msg, String hash, String foodPic_Url) {
+        this.resName = resName;
+        this.msg = msg;
+        this.hash = hash;
+        this.foodPic_Url = foodPic_Url;
+    }
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.item_detail_frag_ate);
+    //FB DB 에 저장하려고 만든 빈 생성자
+    public RecvItems() {
+    }
 
-        recyclerView=findViewById(R.id.detail_frag_ate_recycler);
-        swipeRefreshLayout=findViewById(R.id.swipeRefreshLayout);
+    //getter and setter
+    public String getResName() {
+        return resName;
+    }
 
-        Intent intent=getIntent();
+    public void setResName(String resName) {
+        this.resName = resName;
+    }
 
-    }//end of onCreate
+    public String getMsg() {
+        return msg;
+    }
 
-//    public RecvItems(int iv_food_pic, String tv_res_name, String tv_main, String tv_hash) {
-//        this.iv_food_pic = iv_food_pic;
-//        this.tv_res_name = tv_res_name;
-//        this.tv_main = tv_main;
-//        this.tv_hash = tv_hash;
-//    }//end of constructor : alt + insert
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
+    public String getHash() {
+        return hash;
+    }
 
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
 
+    public String getFoodPic_Url() {
+        return foodPic_Url;
+    }
 
+    public void setFoodPic_Url(String foodPic_Url) {
+        this.foodPic_Url = foodPic_Url;
+    }
 }//end of RecvItems
