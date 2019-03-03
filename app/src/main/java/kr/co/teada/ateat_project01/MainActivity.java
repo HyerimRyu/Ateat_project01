@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 //어떤 메뉴 아이템이 터치되었는지 확인
                 switch (menuItem.getItemId()){
                     case R.id.action_home:
-                        //메인페이지 이동
-                        Toast.makeText(MainActivity.this, "메인페이지 이동", Toast.LENGTH_SHORT).show();
+                        Intent intentMain=new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intentMain);
                         return true;
 
                     case R.id.action_view_all_photos:
@@ -77,10 +77,8 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.action_camera:
-                        //카메라 프래그 이동
-                        //Toast.makeText(MainActivity.this, "카메라 프레그이동", Toast.LENGTH_SHORT).show();
-                        Intent intent=new Intent(MainActivity.this, CameraActivity.class);
-                        startActivity(intent);
+                        Intent intentCamera=new Intent(MainActivity.this, CameraActivity.class);
+                        startActivity(intentCamera);
                         return true;
 
                     case R.id.action_account:
