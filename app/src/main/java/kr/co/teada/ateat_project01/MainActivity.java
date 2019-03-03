@@ -78,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.action_camera:
                         //카메라 프래그 이동
-                        Toast.makeText(MainActivity.this, "카메라 프레그이동", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MainActivity.this, "카메라 프레그이동", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(MainActivity.this, CameraActivity.class);
+                        startActivity(intent);
                         return true;
 
                     case R.id.action_account:
