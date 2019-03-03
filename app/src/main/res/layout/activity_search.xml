@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <!--Contents 레이아웃-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/search_food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="음식별"
+            android:onClick="clickByFoodSearch"/>
+
+        <Button
+            android:id="@+id/search_situation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="상황별"
+            android:onClick="clickBySituationSearch"
+            android:layout_below="@+id/search_food"/>
+
+    </RelativeLayout>
+
+    <!--바텀시트 레이아웃: 전용클래스 없어-->
+    <!--아래에서 주르륵 올라오는거 따로 만들어줘야해-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:behavior_peekHeight="60dp"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+        android:orientation="vertical"
+        android:background="#dddddd"
+        android:padding="16dp">
+
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

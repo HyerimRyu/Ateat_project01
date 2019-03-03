@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="situations">
+        <item>친구약속</item>
+        <item>데이트</item>
+        <item>모임</item>
+        <item>가족외식</item>
+        <item>비즈니스</item>
+
+    </string-array>
+</resources>
