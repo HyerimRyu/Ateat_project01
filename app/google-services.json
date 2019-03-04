@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "419941091226",
+    "firebase_url": "https://ateat-3a1e4.firebaseio.com",
+    "project_id": "ateat-3a1e4",
+    "storage_bucket": "ateat-3a1e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419941091226:android:f9aa34c67e41ec4c",
+        "android_client_info": {
+          "package_name": "kr.co.teada.ateat_project01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419941091226-h1ggciq194pt2c3ndubo904o4oa11dcp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhAybA5dVXY3gbKmqKsc76sDXNYDQEWOQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

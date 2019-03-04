@@ -9,10 +9,46 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 public class GridFragment extends Fragment {
 
+    @Nullable
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        View view=inflater.inflate(R.layout.fragment_grid_bn, container,false);
+
+        RecyclerView recyclerView=view.findViewById(R.id.grid_frag_recyv);
+
+        recyclerView.setAdapter(new GridFragmentRecyclerViewAdapter());
+
+
+        return view;
+    }//end of View onCreateView
+
+    //Recycler View Adapter
+    class GridFragmentRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+
+
+        @NonNull
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+            return null;
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return 0;
+        }
     }
+
+
+
+
 }//end of GridFragment
