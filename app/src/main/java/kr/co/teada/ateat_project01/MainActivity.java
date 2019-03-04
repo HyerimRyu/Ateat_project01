@@ -103,15 +103,13 @@ public class MainActivity extends AppCompatActivity {
 
     //액션바 버튼 control
     public void btn_search(View view) {
-        //search -> 검색 액티비티로 이동
-        //Toast.makeText(this, "검색액티비티 이동", Toast.LENGTH_SHORT).show();
         Intent intent=new Intent(MainActivity.this, SearchActivity.class);
         startActivity(intent);
     }
 
     public void btn_add(View view) {
-        //add -> 추가 액티비티로 이동
-        Toast.makeText(this, "추가 액티비티 이동", Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(MainActivity.this, AddActivity.class);
+        startActivity(intent);
     }
 
 
