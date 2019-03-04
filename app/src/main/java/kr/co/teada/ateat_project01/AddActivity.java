@@ -1,12 +1,17 @@
 package kr.co.teada.ateat_project01;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethod;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,6 +24,7 @@ import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class AddActivity extends AppCompatActivity {
@@ -29,6 +35,10 @@ public class AddActivity extends AppCompatActivity {
     private FirebaseStorage firebaseStorage;
     private FirebaseDatabase firebaseDatabase;
 
+    DatabaseReference addRef;
+
+    EditText et_add_photo_content;
+
 
 
     @Override
@@ -37,6 +47,7 @@ public class AddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add);
 
         iv_add_photo_img=findViewById(R.id.iv_add_photo_img);
+        et_add_photo_content=findViewById(R.id.et_add_photo_content);
 
         //권한요청 이렇게 여기서 바로 할 수도 있어
         //ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
@@ -107,4 +118,30 @@ public class AddActivity extends AppCompatActivity {
                 break;
         }
     }//end of onActivityResult
+
+    public void clickUpload(View view) {
+        //add 창에서 올리기 버튼 눌렀을 떄  에러난다 ㅠㅠㅠㅠ 수정하기!!!
+        String img=G.imgUrl;
+
+        String mainText=et_add_photo_content.getText().toString();
+        String hash=G.hash;
+
+        Calendar calendar=Calendar.getInstance();
+        String time=calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(Calendar.MINUTE);
+
+        AteFragItem ateFragItem=new AteFragItem(img, mainText, hash,time);
+
+        addRef.push().setValue(ateFragItem);
+
+        et_add_photo_content.setText("");
+
+        InputMethodManager imm= (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+
+        Intent intent=new Intent(AddActivity.this, MainActivity.class);
+        startActivity(intent);
+
+
+
+    }
 }//end of AddActivity

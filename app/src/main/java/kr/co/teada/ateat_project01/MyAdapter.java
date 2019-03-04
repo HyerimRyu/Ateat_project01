@@ -17,12 +17,12 @@ public class MyAdapter extends FragmentPagerAdapter {
         frags[1]=new EatFragment();
     }//end of MyAdapter
 
-
+    //뷰페이저가 보여줄 프레그먼트를 만들어서 리턴시키는 메소드
     @Override
     public Fragment getItem(int position) { return frags[position]; }
 
     @Override
-    public int getCount() { return frags.length; }
+    public int getCount() { return 2; }
 
     @Nullable
     @Override

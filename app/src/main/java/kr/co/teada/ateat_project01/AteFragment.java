@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -24,8 +25,8 @@ import java.util.ArrayList;
 
 public class AteFragment extends Fragment {
 
-    RecyclerView recyclerView;
-    RecyvAdapter recyvAdapter;
+    ListView ate_listview;
+    AteAdapter ateAdapter;
 
     //대량의 데이터 준비
     ArrayList<AteFragItem> ateFragItems=new ArrayList<>();
@@ -46,10 +47,10 @@ public class AteFragment extends Fragment {
 //       sliderLayout=view.findViewById(R.id.imageSlider);
 //       sliderLayout.setScrollTimeInSec(1);//set scroll delay in seconds
 
-        //리사이클러뷰 어댑터 연결
-        recyclerView=view.findViewById(R.id.detail_frag_ate_recycler);
-        recyvAdapter=new RecyvAdapter(ateFragItems, getLayoutInflater());
-        recyclerView.setAdapter(recyvAdapter);
+        //리스트뷰 어댑터 연결
+        ate_listview=view.findViewById(R.id.ate_listview);
+        ateAdapter=new AteAdapter(ateFragItems, getLayoutInflater());
+        ate_listview.setAdapter(ateAdapter);
 
         swipeRefreshLayout=view.findViewById(R.id.swipeRefreshLayout);
 
@@ -60,9 +61,11 @@ public class AteFragment extends Fragment {
         ateRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
                 AteFragItem ateFragItem=dataSnapshot.getValue(AteFragItem.class);
+                ateFragItems.add(ateFragItem);
 
-
+                ateAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -91,28 +94,12 @@ public class AteFragment extends Fragment {
         return view;
     }//end of onCreateView
 
-//    void loadData(){
-//        SharedPreferences pref=get
-//
-//    }
+
+    //onCreateView()가 종료된 후 자동으로 실행되는 메소드 뷰 제어는 여기서
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 }//end of AteFragment

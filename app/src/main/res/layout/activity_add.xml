@@ -77,7 +77,8 @@
         android:layout_margin="8dp"
         android:layout_toEndOf="@+id/iv_add_photo_img"
         android:text="@string/upload_image"
-        android:theme="@style/BottomStyle"/>
+        android:theme="@style/BottomStyle"
+        android:onClick="clickUpload"/>
 
 
 

@@ -16,14 +16,16 @@ import java.util.ArrayList;
 
 public class RecyvAdapter extends RecyclerView.Adapter {
 
+    //////얘도 지우기!!!!!!!!!!!대체할꺼야 recy 다 지워
+
     //1. 대량의 데이터 참조변수
     ArrayList<RecvItems> recvItems;
     AteFragment context;
 
     //생성자 alt + insert
     public RecyvAdapter(ArrayList<AteFragItem> recvItems, LayoutInflater context) {
-        this.recvItems = recvItems;
-        this.context = context;
+        //this.recvItems = recvItems;
+        //this.context = context;
     }
 
     @NonNull
