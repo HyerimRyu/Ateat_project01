@@ -12,19 +12,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.smarteist.autoimageslider.SliderLayout;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 
 public class AteFragment extends Fragment {
-    //Ex56 recyclerview2_advancerversion: 원피스 상디조로 참고
-
-    //대량의 데이터 준비
-    ArrayList<RecvItems> recvItems=new ArrayList<>();
 
     RecyclerView recyclerView;
     RecyvAdapter recyvAdapter;
+
+    //대량의 데이터 준비
+    ArrayList<AteFragItem> ateFragItems=new ArrayList<>();
+
+    DatabaseReference ateRef;
 
     SwipeRefreshLayout swipeRefreshLayout;
 
@@ -37,16 +43,48 @@ public class AteFragment extends Fragment {
 
         View view=inflater.inflate(R.layout.fragment_ate, container, false);
 
-        recyclerView=view.findViewById(R.id.detail_frag_ate_recycler);
-        swipeRefreshLayout=view.findViewById(R.id.swipeRefreshLayout);
-
 //       sliderLayout=view.findViewById(R.id.imageSlider);
 //       sliderLayout.setScrollTimeInSec(1);//set scroll delay in seconds
 
         //리사이클러뷰 어댑터 연결
         recyclerView=view.findViewById(R.id.detail_frag_ate_recycler);
-        recyvAdapter=new RecyvAdapter(recvItems, this);
+        recyvAdapter=new RecyvAdapter(ateFragItems, getLayoutInflater());
         recyclerView.setAdapter(recyvAdapter);
+
+        swipeRefreshLayout=view.findViewById(R.id.swipeRefreshLayout);
+
+        //'ate' 노드의 참조객체 얻어오기
+        ateRef= FirebaseDatabase.getInstance().getReference("ate");
+
+        //ate 노드에 저장된 데이터 읽어오기
+        ateRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                AteFragItem ateFragItem=dataSnapshot.getValue(AteFragItem.class);
+
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         //loadData();  //return 전
 

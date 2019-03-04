@@ -21,7 +21,7 @@ public class RecyvAdapter extends RecyclerView.Adapter {
     AteFragment context;
 
     //생성자 alt + insert
-    public RecyvAdapter(ArrayList<RecvItems> recvItems, AteFragment context) {
+    public RecyvAdapter(ArrayList<AteFragItem> recvItems, LayoutInflater context) {
         this.recvItems = recvItems;
         this.context = context;
     }

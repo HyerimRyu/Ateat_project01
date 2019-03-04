@@ -1,15 +1,6 @@
 package kr.co.teada.ateat_project01;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-
-public class RecvItems {
-
-    //이 클래스 지우기: AteFragItem 으로 대체 *********
+public class AteFragItem {
 
     //item_detail_frag_ate.xml 상세샷에 포함된 멤버변수
     private String resName;
@@ -18,19 +9,23 @@ public class RecvItems {
 
     private String foodPic_Url;
 
-    //생성자 alt + insert
-    public RecvItems(String resName, String msg, String hash, String foodPic_Url) {
+    //생성자 command + N
+
+
+    public AteFragItem(String resName, String msg, String hash, String foodPic_Url) {
         this.resName = resName;
         this.msg = msg;
         this.hash = hash;
         this.foodPic_Url = foodPic_Url;
     }
 
+
     //FB DB 에 저장하려고 만든 빈 생성자
-    public RecvItems() {
+    public AteFragItem() {
     }
 
     //getter and setter
+
     public String getResName() {
         return resName;
     }
@@ -62,4 +57,4 @@ public class RecvItems {
     public void setFoodPic_Url(String foodPic_Url) {
         this.foodPic_Url = foodPic_Url;
     }
-}//end of RecvItems
+}
