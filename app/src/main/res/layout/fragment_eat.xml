@@ -5,9 +5,18 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="리니어 레이아웃으로 메모처럼 플로팅 액션버튼으로 추가하기 만들기"/>
+    <!--SwipeRefreshLayout-->
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/eat_swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/eatListview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

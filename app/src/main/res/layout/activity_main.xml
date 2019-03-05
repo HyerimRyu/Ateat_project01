@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme.Appbar">
 
 
-    <!--Toolbar-->
+    <!--Toolbar 빨간 ateat-->
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"

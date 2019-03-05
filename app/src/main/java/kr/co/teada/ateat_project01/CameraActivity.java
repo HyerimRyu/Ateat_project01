@@ -43,10 +43,20 @@ public class CameraActivity extends AppCompatActivity {
             if (permissionResult== PackageManager.PERMISSION_DENIED){
                 String[] permission=new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
                 requestPermissions(permission, 100);
+
             }
         }
+        //바로 카메라 열기
+        Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
+        //이미지 경로 설정
+        setImageUri();
+
+        if (imageUri!=null) intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+        startActivityForResult(intent, 10);
     }//end of onCreate
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -63,16 +73,16 @@ public class CameraActivity extends AppCompatActivity {
         }
     }
 
-    public void clickCamera(View view) {
-
-        Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-        //이미지 경로 설정
-        setImageUri();
-
-        if (imageUri!=null) intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-        startActivityForResult(intent, 10);
-    }//end of clickCamera
+//    public void clickCamera(View view) {
+//
+//       Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//
+//       //이미지 경로 설정
+//       setImageUri();
+//
+//        if (imageUri!=null) intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+//        startActivityForResult(intent, 10);
+//    }//end of clickCamera
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -111,7 +121,7 @@ public class CameraActivity extends AppCompatActivity {
 
         //3. 저장할 파일의 이름을 포함한 경로 생성
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyyMMddhhmmss");
-        String fileName="Img_"+simpleDateFormat.format(new Date())+".png";
+        String fileName="img_"+simpleDateFormat.format(new Date())+".png";
 
         File file=new File(path, fileName);
 
@@ -120,6 +130,6 @@ public class CameraActivity extends AppCompatActivity {
         }else{
             imageUri= FileProvider.getUriForFile(this, "kr.co.teada.ateat_project01.FileProvider",file);
         }
-
+        finish(); //바텀 카메라 누르면 바로 카메라 앱 실행하고 사진 찍고 메인으로 넘어가기
     }
 }//end of CameraActivity
