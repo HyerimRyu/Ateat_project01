@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         //뷰페이저와 TabLayout 연동
         tabLayout.setupWithViewPager(pager);
 
-
+/////////////////////////////////////////////////////////////////////////////////////
 
 
         //바텀네비 클릭시 사용되는 리스너 구현
