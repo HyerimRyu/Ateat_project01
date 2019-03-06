@@ -7,7 +7,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
-public class RecvItems {
+public class DeleteRecvItems {
 
     //이 클래스 지우기: AteFragItem 으로 대체 *********
 
@@ -19,7 +19,7 @@ public class RecvItems {
     private String foodPic_Url;
 
     //생성자 alt + insert
-    public RecvItems(String resName, String msg, String hash, String foodPic_Url) {
+    public DeleteRecvItems(String resName, String msg, String hash, String foodPic_Url) {
         this.resName = resName;
         this.msg = msg;
         this.hash = hash;
@@ -27,7 +27,7 @@ public class RecvItems {
     }
 
     //FB DB 에 저장하려고 만든 빈 생성자
-    public RecvItems() {
+    public DeleteRecvItems() {
     }
 
     //getter and setter
@@ -62,4 +62,4 @@ public class RecvItems {
     public void setFoodPic_Url(String foodPic_Url) {
         this.foodPic_Url = foodPic_Url;
     }
-}//end of RecvItems
+}//end of DeleteRecvItems

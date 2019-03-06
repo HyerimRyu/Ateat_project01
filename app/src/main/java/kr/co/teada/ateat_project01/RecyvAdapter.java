@@ -1,7 +1,5 @@
 package kr.co.teada.ateat_project01;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.smarteist.autoimageslider.SliderLayout;
-
 import java.util.ArrayList;
 
 public class RecyvAdapter extends RecyclerView.Adapter {
@@ -19,12 +15,12 @@ public class RecyvAdapter extends RecyclerView.Adapter {
     //////얘도 지우기!!!!!!!!!!!대체할꺼야 recy 다 지워
 
     //1. 대량의 데이터 참조변수
-    ArrayList<RecvItems> recvItems;
+    ArrayList<DeleteRecvItems> deleteRecvItems;
     AteFragment context;
 
     //생성자 alt + insert
     public RecyvAdapter(ArrayList<AteFragItem> recvItems, LayoutInflater context) {
-        //this.recvItems = recvItems;
+        //this.deleteRecvItems = deleteRecvItems;
         //this.context = context;
     }
 
@@ -52,7 +48,7 @@ public class RecyvAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public int getItemCount() { return recvItems.size(); }
+    public int getItemCount() { return deleteRecvItems.size(); }
 
 
     //VH inner class
