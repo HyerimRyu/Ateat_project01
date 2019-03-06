@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -52,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
         //뷰페이저와 TabLayout 연동
         tabLayout.setupWithViewPager(pager);
+
+
+
 
         //바텀네비 클릭시 사용되는 리스너 구현
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);

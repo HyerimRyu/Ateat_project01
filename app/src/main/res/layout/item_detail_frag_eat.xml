@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp">
+
+        <!--메모장 같은 프로그램: 텍스트뷰가 에딧텍스트로 뷰전환 해보기: https://technote.kr/66-->
+        <TextView
+            android:id="@+id/eatTvMemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="먹고싶은거 먹을거 여기 적어"
+            android:textSize="16sp"
+            android:textColor="@color/colorDarkGray"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/eatTvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2019 030 50 12:45"
+            android:textSize="12sp"
+            android:textColor="@color/colorNavIcon"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:layout_width="72dp"
+                android:layout_height="40dp"
+                android:text="수정" />
+
+            <Button
+                android:layout_width="72dp"
+                android:layout_height="40dp"
+                android:text="삭제"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
