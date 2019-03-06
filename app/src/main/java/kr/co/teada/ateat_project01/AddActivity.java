@@ -49,6 +49,8 @@ public class AddActivity extends AppCompatActivity {
         iv_add_photo_img=findViewById(R.id.iv_add_photo_img);
         et_add_photo_content=findViewById(R.id.et_add_photo_content);
 
+        addRef=FirebaseDatabase.getInstance().getReference("add");
+
         //권한요청 이렇게 여기서 바로 할 수도 있어
         //ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
 
