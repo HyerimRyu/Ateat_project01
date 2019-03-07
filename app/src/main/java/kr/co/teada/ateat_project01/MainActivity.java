@@ -1,9 +1,11 @@
 package kr.co.teada.ateat_project01;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
@@ -15,6 +17,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -26,6 +30,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    Toolbar toolbar;
     TabLayout tabLayout;
 
     ViewPager pager;
@@ -37,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //툴바를 액션바로 설정
-        Toolbar toolbar=findViewById(R.id.my_toolbar);
+        toolbar=findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
 
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true); //뒤로가기 버튼, 디폴트로 true하면 백버튼 생겨
@@ -57,12 +62,12 @@ public class MainActivity extends AppCompatActivity {
 
 /////////////////////////////////////////////////////////////////////////////////////
 
-
         //바텀네비 클릭시 사용되는 리스너 구현
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                Fragment fragment=null;
 
                 //어떤 메뉴 아이템이 터치되었는지 확인
                 switch (menuItem.getItemId()){
@@ -72,11 +77,13 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.action_view_all_photos:
+                        //탭바 없애고 프레그가 전체 다 먹기
                         //사진 전체보기 프레그 이동
                         Toast.makeText(MainActivity.this, "사진 전체보기 프레그 이동", Toast.LENGTH_SHORT).show();
                         return true;
 
                     case R.id.action_like:
+                        //탭바 없애고 프레그가 전체 다 먹기
                         //좋아요 프레그 이동
                         Toast.makeText(MainActivity.this, "좋아요 프레그 이동", Toast.LENGTH_SHORT).show();
                         return true;
@@ -87,22 +94,20 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.action_account:
-                        //내 계정 프래그 이동
-                        Toast.makeText(MainActivity.this, "내계정/프레/이동", Toast.LENGTH_SHORT).show();
-                        return true;
+                        //전체 화면 사용하기: 상태바, 액션바 숨기기->메소드로 빼자
+                        useFullScreen();
+
+                        fragment=new UserBnFrag();
+                        break;
                 }
-                return false;
+                return loadFragment(fragment);
+                //return false;
             }//end of onNavigationItemSelected
         });//end of setOnNavigationItemSelectedListener
 
 
     }//end of onCreate()
 
-
-
-
-    public void setSupportActionBar(Toolbar toolbar) {
-    }
 
 
 
@@ -115,6 +120,24 @@ public class MainActivity extends AppCompatActivity {
     public void btn_add(View view) {
         Intent intent=new Intent(MainActivity.this, AddActivity.class);
         startActivity(intent);
+    }
+
+
+    //바텀네비 누르면 프레그 실행 메소
+    private boolean loadFragment(Fragment fragment){
+        //Switching fragment
+        if (fragment != null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
+            return true;
+        }
+        return false;
+
+    }
+
+    void useFullScreen(){
+        //remove title
+
+
     }
 
 

@@ -122,7 +122,7 @@ public class AddActivity extends AppCompatActivity {
     }//end of onActivityResult
 
     public void clickUpload(View view) {
-        //add 창에서 올리기 버튼 눌렀을 떄  에러난다 ㅠㅠㅠㅠ 수정하기!!!
+        //add 창에서 올리기 버튼 눌렀을 떄  에러난다 ㅠㅠㅠㅠ 수정하기!!!-->firebase addRef NULLPoint였어, logcat 확인 후 참조해줌
         String img=G.imgUrl;
 
         String mainText=et_add_photo_content.getText().toString();

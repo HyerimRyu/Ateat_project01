@@ -17,9 +17,10 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        app:layout_scrollFlags="scroll">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -31,7 +32,7 @@
                 android:layout_height="32dp"
                 android:layout_centerInParent="true"
                 android:layout_margin="3dp"
-                android:src="@drawable/logo_title_white"/>
+                android:src="@drawable/logo_title_white" />
 
             <ImageView
                 android:id="@+id/toolbar_btn_search"
@@ -68,6 +69,7 @@
 
 
     <!--중앙화면-->
+        <!--메인 xml 애는 탭레이아웃이랑 페이저만 두고, 리사이클 뷰는 frag1,2에 넣기 -->
 
     <!--탭 레이아웃: 탭의 버튼들은 java 에서 추가해야해 -->
     <android.support.design.widget.TabLayout
@@ -77,10 +79,12 @@
         app:tabTextColor="@color/colorNavIcon"
         app:tabIndicatorColor="@color/colorNavIcon"
         app:tabIndicatorHeight="2dp"
-        app:tabMode="fixed">
+        app:tabMode="fixed"
+        app:layout_scrollFlags="scroll">
 
     </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
+
 
 
         <!--Content 영역(ViewPager)-->
@@ -91,8 +95,15 @@
 
         </android.support.v4.view.ViewPager>
 
-    <!--****** Fragment가 놓여질 ViewGroup -->
-    <!--여기에 리사이클러뷰!!!!!!!!!!!!!!!-->
+    <!--바텀 네비 누를때마다 관련 프레그 보여줄 뷰그룹-->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="56dp">
+
+    </FrameLayout>
+
 
 
     <!--중앙화면과 BottomNavi 나누는 선-->

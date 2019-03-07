@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 public class AteFragment extends Fragment {
 
-    ListView ate_listview;
+    RecyclerView ateRecyclerview;
     AteAdapter ateAdapter;
 
     //대량의 데이터 준비
@@ -33,7 +33,7 @@ public class AteFragment extends Fragment {
 
     DatabaseReference ateRef;
 
-    SwipeRefreshLayout swipeRefreshLayout;
+    //SwipeRefreshLayout swipeRefreshLayout;
 
 
    // SliderLayout sliderLayout;
@@ -47,12 +47,12 @@ public class AteFragment extends Fragment {
 //       sliderLayout=view.findViewById(R.id.imageSlider);
 //       sliderLayout.setScrollTimeInSec(1);//set scroll delay in seconds
 
-        //리스트뷰 어댑터 연결
-        ate_listview=view.findViewById(R.id.ate_listview);
+        //리사이클러뷰 어댑터 연결
+        ateRecyclerview=view.findViewById(R.id.ateRecyclerview);
         ateAdapter=new AteAdapter(ateFragItems, getLayoutInflater());
-        ate_listview.setAdapter(ateAdapter);
+        ateRecyclerview.setAdapter(ateAdapter);
 
-        swipeRefreshLayout=view.findViewById(R.id.swipeRefreshLayout);
+        //swipeRefreshLayout=view.findViewById(R.id.swipeRefreshLayout);
 
         //'ate' 노드의 참조객체 얻어오기
         ateRef= FirebaseDatabase.getInstance().getReference("ate");
