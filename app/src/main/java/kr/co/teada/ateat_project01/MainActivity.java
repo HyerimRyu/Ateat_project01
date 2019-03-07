@@ -1,31 +1,17 @@
 package kr.co.teada.ateat_project01;
 
-import android.app.ActionBar;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.smarteist.autoimageslider.SliderLayout;
-import com.smarteist.autoimageslider.SliderView;
-
-import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -95,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.action_account:
                         //전체 화면 사용하기: 상태바, 액션바 숨기기->메소드로 빼자
-                        useFullScreen();
+                        hideSystemUI();
 
                         fragment=new UserBnFrag();
                         break;
@@ -134,10 +120,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void useFullScreen(){
-        //remove title
+    public void hideSystemUI(){
+        //밧데리, 시간 등 안보이게
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        |View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
 
+    }
+
+    public void useFullScreen(){
+        //hide toolbar in specific fragment
     }
 
 
