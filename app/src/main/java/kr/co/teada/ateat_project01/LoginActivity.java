@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void btn_email_login(View view) {
 
-        Intent intent=new Intent(LoginActivity.this, MainActivity.class);
+        Intent intent=new Intent(LoginActivity.this, WelcomeActivity.class);
         startActivity(intent);
 
         finish();

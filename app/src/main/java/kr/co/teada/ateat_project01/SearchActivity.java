@@ -3,6 +3,7 @@ package kr.co.teada.ateat_project01;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +20,23 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        Toolbar toolbar=findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
+
+        searchView=findViewById(R.id.searchView);
+        searchView.setQueryHint("무엇을 찾고 계세요?");
+
+        searchView.setOnQueryTextListener(new android.support.v7.widget.SearchView.OnQueryTextListener() {
+                                              @Override
+                                              public boolean onQueryTextSubmit(String s) {
+                                                  Toast.makeText(SearchActivity.this, s+"를 검색합니다.", Toast.LENGTH_SHORT).show();
+                                                  return false;
+                                              }
+
+                                              @Override
+                                              public boolean onQueryTextChange(String s) { return false; }
+
     }//end of onCreate
 
     //액션바에 메뉴 달때

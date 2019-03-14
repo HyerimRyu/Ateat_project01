@@ -5,7 +5,7 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
 
-    <string name="signin_email">회원가입 및 이메일 로그인</string>
+    <string name="signin_email">회원가입없이 바로 사용</string>
     <string name="signin_google">Google 계정으로 로그인</string>
     <string name="signin_kakao">카카오톡 계정으로 로그인</string>
     <string name="signup_complete">회원가입 성공</string>
@@ -14,6 +14,12 @@
     <string name="signout_success">로그아웃 성공</string>
     <string name="signout_fail">로그아웃 실패</string>
     <string name="signout_fail_null">이메일과 비밀번호를 입력해 주세요</string>
+
+    <!--welcome-->
+    <string name="welcome">반갑습니다!</string>
+    <string name="nickWelcome">nickName 님! 반갑습니다!</string>
+    <string name="welcome_text">내 계정에서 사용할\n닉네임과 프로필 사진을\n설정해주세요.</string>
+    <string name="next">다음</string>
 
 
     <!--Bottom Navigation View-->

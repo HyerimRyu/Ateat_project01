@@ -3,11 +3,9 @@
     package="kr.co.teada.ateat_project01">
     <!-- 인터넷 퍼미션 설정값 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 스토리지 접근권한 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 외부저장소 사용 퍼미션 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <!--외부저장소 사용 퍼미션-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -16,26 +14,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CameraActivity"></activity>
+        <activity android:name=".WelcomeActivity"></activity>
+        <activity android:name=".CameraActivity" />
         <activity android:name=".IntroActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!--다른 앱에게 공개할 파일의 경로 지정-->
-        <!--authorities : 프로바이더를 구별할 식별저-->
+        </activity> <!-- 다른 앱에게 공개할 파일의 경로 지정 -->
+        <!-- authorities : 프로바이더를 구별할 식별저 -->
         <provider
-            android:authorities="kr.co.teada.ateat_project01.FileProvider"
             android:name="android.support.v4.content.FileProvider"
+            android:authorities="kr.co.teada.ateat_project01.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
 
-            <!--프로바이더 공개할 파일의 경로(path) 지정 : xml 지정-->
-            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/paths"/>
+            <!-- 프로바이더 공개할 파일의 경로(path) 지정 : xml 지정 -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
         </provider>
 
         <activity android:name=".LoginActivity" />
