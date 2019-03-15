@@ -16,9 +16,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
+    Toolbar my_toolbar;
     TabLayout tabLayout;
-
     ViewPager pager;
     MyAdapter adapter;
 
@@ -27,12 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //툴바를 액션바로 설정
-        toolbar=findViewById(R.id.my_toolbar);
-        setSupportActionBar(toolbar);
-
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true); //뒤로가기 버튼, 디폴트로 true하면 백버튼 생겨
-
+        my_toolbar=findViewById(R.id.my_toolbar);
+        setSupportActionBar(my_toolbar);
 
         //탭버튼 객체 추가하기
         tabLayout=findViewById(R.id.layout_tab);

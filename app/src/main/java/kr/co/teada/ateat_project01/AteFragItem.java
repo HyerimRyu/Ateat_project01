@@ -3,11 +3,11 @@ package kr.co.teada.ateat_project01;
 public class AteFragItem {
 
     //item_detail_frag_ate.xml 상세샷에 포함된 멤버변수
+    private String foodPic_Url;
+
     private String resName;
     private String msg;
     private String hash;
-
-    private String foodPic_Url;
 
     //생성자 command + N
 

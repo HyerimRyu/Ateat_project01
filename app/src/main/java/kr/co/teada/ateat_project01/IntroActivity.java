@@ -27,11 +27,7 @@ public class IntroActivity extends AppCompatActivity {
 
         iv_intro=findViewById(R.id.iv_intro);
         progressBar=findViewById(R.id.progress_bar);
-
-//        Animation ani=AnimationUtils.loadAnimation(this, R.anim.appear_logo);
-//        iv_intro.startAnimation(ani);
-//
-          timer.schedule(task, 2000);
+        timer.schedule(task, 2000);
 
     }//end of onCreate
 

@@ -8,6 +8,7 @@
 
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.Appbar">
@@ -21,6 +22,10 @@
         android:background="@color/colorPrimary"
         android:layout_alignParentTop="true"
         app:layout_scrollFlags="scroll">
+
+        <!--&lt;!&ndash;<include&ndash;&gt;-->
+            <!--&lt;!&ndash;layout="@layout/toolbar_main"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/includeToolbar"/>&ndash;&gt;-->
 
         <RelativeLayout
             android:layout_width="match_parent"

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class RecyvAdapter extends RecyclerView.Adapter {
 
-    //////얘도 지우기!!!!!!!!!!!대체할꺼야 recy 다 지워
+    //////얘도 지우기!!!!!!!!!!!대체할꺼야 recy 다 지워 -->AteAdapter로 대체
 
     //1. 대량의 데이터 참조변수
     ArrayList<DeleteRecvItems> deleteRecvItems;

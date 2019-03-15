@@ -3,21 +3,28 @@ package kr.co.teada.ateat_project01;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toolbar;
 
 public class UserBnFrag extends Fragment {
 
+    AppBarLayout appBarLayout;
     // frag  1. onCreateView
     //1-1/ return 에 inflate
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_user_bn,null);
+
+        View v=inflater.inflate(R.layout.fragment_user_bn,container,false);
+
+        appBarLayout=v.findViewById(R.id.appBarLayout);
+        return v;
     }
 
 

@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.SearchView;
+import android.support.v7.widget.SearchView;
 import android.widget.Toast;
 
 public class SearchActivity extends AppCompatActivity {
@@ -27,15 +27,18 @@ public class SearchActivity extends AppCompatActivity {
         searchView=findViewById(R.id.searchView);
         searchView.setQueryHint("무엇을 찾고 계세요?");
 
-        searchView.setOnQueryTextListener(new android.support.v7.widget.SearchView.OnQueryTextListener() {
-                                              @Override
-                                              public boolean onQueryTextSubmit(String s) {
-                                                  Toast.makeText(SearchActivity.this, s+"를 검색합니다.", Toast.LENGTH_SHORT).show();
-                                                  return false;
-                                              }
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                Toast.makeText(SearchActivity.this, s+"를 검색합니다.", Toast.LENGTH_SHORT).show();
+                return false;
+            }
 
-                                              @Override
-                                              public boolean onQueryTextChange(String s) { return false; }
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
 
     }//end of onCreate
 
@@ -126,3 +129,4 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 }//end of SearchActivity
+

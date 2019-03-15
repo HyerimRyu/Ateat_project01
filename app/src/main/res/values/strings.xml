@@ -5,7 +5,7 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
 
-    <string name="signin_email">회원가입없이 바로 사용</string>
+    <string name="signin_email">바로 사용</string>
     <string name="signin_google">Google 계정으로 로그인</string>
     <string name="signin_kakao">카카오톡 계정으로 로그인</string>
     <string name="signup_complete">회원가입 성공</string>

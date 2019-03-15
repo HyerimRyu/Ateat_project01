@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -37,9 +38,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void btn_google_login(View view) {
+        Toast.makeText(this, "서비스 준비중\n위에 있는 [바로사용] 버튼을 눌러주세요", Toast.LENGTH_SHORT).show();
     }
 
     public void btn_kakao_login(View view) {
+        Toast.makeText(this, "서비스 준비중\n위에 있는 [바로사용] 버튼을 눌러주세요", Toast.LENGTH_SHORT).show();
     }
 
 
